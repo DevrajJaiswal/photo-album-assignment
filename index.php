@@ -15,6 +15,7 @@
         <!-- Upload Form Start-->
         <div class="form-container">
             <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data">
+                <span class="fixed-heading hide-heading">My Photo Album</span>
                 <input type="file" name="image" id="image">
                 <button type="submit" name="save" id="saveImgButton">Save</button>
             </form>

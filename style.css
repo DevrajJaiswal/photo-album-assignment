@@ -5,8 +5,10 @@
 }
 
 main {
-  max-width: 620px;
+  position: relative;
+  max-width: 600px;
   margin: auto;
+  padding: 5px;
 }
 
 .heading {
@@ -28,13 +30,47 @@ main {
   border-radius: 3px;
 }
 
+.fixed-heading {
+  position: relative;
+  line-height: 25px;
+  display: inline-block;
+  font-weight: 700;
+  margin-right: auto;
+}
+.fixed-heading::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  width: 5rem;
+  height: 1px;
+  background-color: green;
+  border-radius: 3px;
+}
+
+.hide-heading {
+  display: none;
+}
+
 form {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
   background-color: rgb(240, 240, 240);
   margin-bottom: 8px;
+  border-radius: 5px;
   padding: 5px 3px;
+  transition: all 0.3s ease;
+}
+
+.form-fixed {
+  position: fixed;
+  left: 5px;
+  top: 0.1rem;
+  z-index: 9;
+  box-shadow: 1px 1px 10px 1px rgb(112, 112, 112);
 }
 
 #saveImgButton {
@@ -46,7 +82,7 @@ form {
   box-shadow: 1px 1px 10px 1px rgb(187, 187, 187);
   border-radius: 5px;
   cursor: pointer;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 
 #saveImgButton:hover {
@@ -64,14 +100,14 @@ form {
 }
 
 .img-box {
-  flex-basis: 300px;
+  flex-basis: 48%;
   height: 200px;
   border-radius: 7px;
   overflow: hidden;
   display: flex;
   align-items: center;
   background: rgb(205, 205, 205);
-   transform: scale(0.3);
+  transform: scale(0.3);
   transition: all 0.3s ease-out;
 }
 
@@ -80,7 +116,6 @@ img {
   height: auto;
   margin: 0;
   object-fit: cover;
-  /* object-position: center; */
 }
 
 .pagination {
@@ -90,7 +125,6 @@ img {
   justify-content: center;
   gap: 1rem;
   padding: 10px 0;
-  /* background-color: rgb(240, 240, 240); */
   z-index: 9;
 }
 
@@ -111,3 +145,21 @@ img {
 .pagination .nav:hover {
   box-shadow: 1px 1px 10px 2px rgb(174, 174, 174);
 }
+
+/* Media queries start */
+@media screen and (max-width: 540px) {
+  .heading {
+    margin: 0.2rem;
+    line-height: 45px;
+    font-size: 25px;
+  }
+  .album-container {
+    justify-content: center;
+  }
+
+  .img-box {
+    flex: 1 1 100%;
+    flex-basis: 100%;
+  }
+}
+/* Media queries end */
