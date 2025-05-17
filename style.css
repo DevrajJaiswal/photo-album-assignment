@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  max-width: 620px;
+  margin: auto;
+}
+
+.heading {
+  text-align: center;
+  margin: 0.5rem;
+  position: relative;
+  line-height: 45px;
+}
+
+.heading::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  width: 7rem;
+  height: 2px;
+  background-color: green;
+  border-radius: 3px;
+}
+
+form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(240, 240, 240);
+  margin-bottom: 8px;
+  padding: 5px 3px;
+}
+
+#saveImgButton {
+  border: 0;
+  padding: 5px 10px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: rgb(0, 0, 0);
+  box-shadow: 1px 1px 10px 1px rgb(187, 187, 187);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+#saveImgButton:hover {
+  box-shadow: 1px 1px 10px 2px rgb(125, 125, 125);
+}
+
+.album-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 2px;
+  overflow: hidden;
+  gap: 0.5rem;
+}
+
+.img-box {
+  flex-basis: 300px;
+  height: 200px;
+  border-radius: 7px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  background: rgb(205, 205, 205);
+   transform: scale(0.3);
+  transition: all 0.3s ease-out;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  object-fit: cover;
+  /* object-position: center; */
+}
+
+.pagination {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 10px 0;
+  /* background-color: rgb(240, 240, 240); */
+  z-index: 9;
+}
+
+.pagination .nav {
+  text-decoration: none;
+  border: 0;
+  padding: 5px 10px;
+  font-size: 14px;
+  color: rgb(0, 0, 0);
+  box-shadow: 1px 1px 10px 1px rgb(112, 112, 112);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  letter-spacing: 1px;
+  background-color: aliceblue;
+}
+
+.pagination .nav:hover {
+  box-shadow: 1px 1px 10px 2px rgb(174, 174, 174);
+}
